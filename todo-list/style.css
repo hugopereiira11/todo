@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: linear-gradient(to right, blue, rgb(3, 3, 161), rgb(5, 5, 116));
+    height: 100vh;
+}
+
+main {
+    width: 600px;
+    background-color: white;
+    padding: 15px;
+    border-radius: 15px;
+    margin: 50px auto;
+}
+
+h1 {
+    text-align: center;
+}
+
+.tarefa {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    background-color: whitesmoke;
+    height: 50px;
+    padding: 5px;
+}
+
+.material-symbols-outlined {
+    opacity: 0;
+    cursor: pointer;
+}
+
+.tarefa:hover .material-symbols-outlined {
+    opacity: 1;
+}
+
+#form-add {
+    margin-bottom: 20px;
+}
+
+#form-edit {
+    display: none;
+}
+
+.concluida {
+    background-color: greenyellow;
+}
