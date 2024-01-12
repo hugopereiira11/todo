@@ -88,7 +88,9 @@ function cancelarEdicao() {
 function carregarLocal() {
     const listaLocal = localStorage.getItem('lista')
 
+   if (listaLocal) {
     listaDeTarefas = JSON.parse(listaLocal)
+  } 
 
     mostrarTarefas()
 }
