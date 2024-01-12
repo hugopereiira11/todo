@@ -18,15 +18,17 @@
             <input type="submit" value="Adicionar">
         </form>
         <form id="editar-produto">
+            <h2>Editat Produto</h2>
             <input type="text" id="edit-codigo" placeholder="Código de Barras" required>
             <input type="text" id="edit-descricao" placeholder="Descrição" required>
             <input type="text" id="edit-quantidade" placeholder="Quantidade" required>
-            <input type="submit" value="Salvar"><button>Cancelar</button>
+            <input type="submit" value="Salvar"><button onclick="cancelarEdicao()">Cancelar</button>
         </form>
 
-        <table id="tabela" style="text-align: center;">
+        <table id="tabela">
             <thead>
                 <tr>
+                    <th></th>
                     <th>Código</th>
                     <th>Descrição</th>
                     <th>Quantidade</th>

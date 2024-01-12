@@ -1,0 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#editar-produto {
+  display: none;
+}
+
+td {
+  padding: 5px;
+}
+
+td:nth-child(-n+4) {
+  border-top: 1px solid black;
+}

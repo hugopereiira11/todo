@@ -6,7 +6,8 @@ const editProduto = document.querySelector('#editar-produto')
 const editCodigo = document.querySelector('#edit-codigo')
 const editDescricao = document.querySelector('#edit-descricao')
 const editQuantidade = document.querySelector('#edit-quantidade')
-const tabela = document.querySelector('#lista')
+const tabela = document.querySelector('#tabela')
+const list = document.querySelector('#lista')
 
 const dados = []
 
@@ -14,11 +15,18 @@ let lista;
 let indice;
 
 function listarDados() {
+
+    if(dados.length == 0) {
+      tabela.style.display = 'none'
+    } else {
+      tabela.style.display = 'block'
+    }
     let lista = ''
 
     dados.forEach((produto, index) => {
         lista = lista + `
             <tr>
+                <td>${index + 1}</td>
                 <td>${produto.codigo}</td>
                 <td>${produto.descricao}</td>
                 <td>${produto.quantidade}</td>
@@ -28,7 +36,7 @@ function listarDados() {
         `
     })
 
-    tabela.innerHTML = lista
+    list.innerHTML = lista
 }
 
 
@@ -59,6 +67,10 @@ function editarProduto(index) {
     editDescricao.value = dados[index].descricao
     editQuantidade.value = dados[index].quantidade
     console.log(indice)
+
+    addProduto.style.display = 'none'
+    tabela.style.display = 'none'
+    editProduto.style.display = 'block'
 }
 
 function salvarEdicao(index, codigo, descricao, quantidade) {
@@ -73,6 +85,16 @@ function salvarEdicao(index, codigo, descricao, quantidade) {
     editQuantidade.value = ""
 
     listarDados()
+}
+
+function cancelarEdicao() {
+  editCodigo.value = ''
+  editDescricao.value = ''
+  editQuantidade.value = ''
+
+  editProduto.style.display = 'none'
+  addProduto.style.display = 'block'
+  tabela.style.display = 'block'
 }
 
 addProduto.addEventListener('submit', (event) => {
